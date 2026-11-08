@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Entropoid</title>
+<meta name="description" content="Entropoid builds verification services where every claim carries its quoted source: GPU rig grading, research reports from public records, and verdicts on work postings and delivered reports.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,750&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: a one-page company front door. Statement, four products, how we work, for agents, contact. */
+:root{
+  --paper:#F6F7F9; --sheet:#FFFFFF; --ink:#18202E; --muted:#59627A; --rule:#DADFE8;
+  --accent:#1F4FC4; --accent-soft:#E5ECFB; --node:#EDF0F5;
+  --f-display:"Bricolage Grotesque","Avenir Next","Segoe UI",system-ui,sans-serif;
+  --f-body:"IBM Plex Sans","Segoe UI",system-ui,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#10141C; --sheet:#171C26; --ink:#E7EAF1; --muted:#9AA3B7; --rule:#2A3242;
+  --accent:#8FABF7; --accent-soft:#1E2A46; --node:#1E2531; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#10141C; --sheet:#171C26; --ink:#E7EAF1; --muted:#9AA3B7; --rule:#2A3242;
+  --accent:#8FABF7; --accent-soft:#1E2A46; --node:#1E2531; color-scheme:dark}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--paper);color:var(--ink);font:400 16px/1.65 var(--f-body);-webkit-font-smoothing:antialiased;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 56px}
+.wrap{max-width:900px;margin:0 auto}
+nav.top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:18px;border-bottom:1px solid var(--rule);flex-wrap:wrap}
+.brand{font:750 18px/1 var(--f-display);letter-spacing:.01em;text-decoration:none;color:var(--ink)}
+nav.top ul{display:flex;gap:4px;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+nav.top a.l{font-size:14px;color:var(--muted);text-decoration:none;padding:6px 10px;border-radius:6px}
+nav.top a.l:hover,nav.top a.l:focus-visible{background:var(--node);color:var(--ink)}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+header.hero{padding-block:64px 40px}
+.kicker{font:500 12px/1 var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+h1{font:750 clamp(36px,6.5vw,62px)/1.02 var(--f-display);margin:14px 0 18px;text-wrap:balance;letter-spacing:-.015em;max-width:18ch}
+.lede{font-size:19px;color:var(--muted);max-width:60ch;margin:0 0 26px}
+.cta{display:inline-flex;gap:10px;flex-wrap:wrap}
+.btn{font:600 15px/1 var(--f-body);text-decoration:none;padding:13px 18px;border-radius:8px;border:1px solid var(--accent);color:var(--accent)}
+.btn.primary{background:var(--accent);color:var(--sheet)}
+section{padding-block:44px 8px;border-top:1px solid var(--rule);scroll-margin-top:16px}
+h2{font:750 clamp(24px,3.6vw,32px)/1.12 var(--f-display);margin:0 0 8px;text-wrap:balance}
+.sub{color:var(--muted);max-width:62ch;margin:0 0 22px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+@media (max-width:640px){.grid{grid-template-columns:1fr}}
+.card{background:var(--sheet);border:1px solid var(--rule);border-radius:10px;padding:18px 20px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.card .tag{font:500 11px/1 var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.card h3{font:600 19px/1.25 var(--f-body);margin:0}
+.card p{margin:0;color:var(--muted);font-size:15px}
+.card a{color:var(--accent);font-weight:600;text-decoration:none;font-size:14.5px;margin-top:auto}
+.card a:hover{text-decoration:underline}
+ol.how{counter-reset:h;list-style:none;padding:0;margin:0;display:grid;gap:10px}
+ol.how li{display:grid;grid-template-columns:40px 1fr;gap:14px;align-items:start;background:var(--sheet);border:1px solid var(--rule);border-radius:10px;padding:16px 18px}
+ol.how li::before{counter-increment:h;content:counter(h);font:750 20px/1 var(--f-display);color:var(--accent);background:var(--accent-soft);border-radius:8px;width:40px;height:40px;display:grid;place-items:center}
+ol.how b{display:block;font-weight:600;margin-bottom:2px}
+ol.how span{color:var(--muted);font-size:15px}
+.agents{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+@media (max-width:700px){.agents{grid-template-columns:1fr}}
+.agents .card code{font:500 13px var(--f-mono);background:var(--node);padding:2px 6px;border-radius:4px;word-break:break-all}
+.contact{background:var(--sheet);border:1px solid var(--rule);border-radius:10px;padding:20px 22px;max-width:62ch}
+.contact p{margin:0 0 8px}
+.ph{display:inline-block;font:500 13px var(--f-mono);background:var(--accent-soft);color:var(--accent);padding:3px 8px;border-radius:4px}
+footer{padding-block:32px 0;color:var(--muted);font-size:13.5px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+footer a{color:var(--muted)}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav class="top" aria-label="Site">
+  <a class="brand" href="#top">Entropoid</a>
+  <ul>
+    <li><a class="l" href="#products">Products</a></li>
+    <li><a class="l" href="#how">How we work</a></li>
+    <li><a class="l" href="#agents">For agents</a></li>
+    <li><a class="l" href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<header class="hero" id="top">
+  <div class="kicker">Verification services</div>
+  <h1>Taking the uncertainty out of what you are about to pay for.</h1>
+  <p class="lede">Entropoid builds small, independent checks for the parts of work where being wrong costs money: the GPU you are about to rent, the posting you are about to work on, the report you are about to pay for. Every claim we make carries the quoted source it came from, and when a source cannot be reached, we say so instead of guessing.</p>
+  <div class="cta">
+    <a class="btn primary" href="#products">See the products</a>
+    <a class="btn" href="#how">How a verdict is built</a>
+  </div>
+</header>
+
+<section id="products">
+  <h2>Four products, one method</h2>
+  <p class="sub">Each one answers a single question and shows its work. People use them through a web page; software agents use them through an API.</p>
+  <div class="grid">
+    <div class="card">
+      <span class="tag">GPU rentals · live</span>
+      <h3>RigGrade</h3>
+      <p>An independent health and speed check for rented GPUs. A pinned benchmark runs on the machine, the result is graded against published bars for that class of card, and the certificate is signed so anyone can verify it. Free preflight and host monitor; paid grades.</p>
+      <a href="https://riggrade-674098696181.us-central1.run.app/riggrade/v1">Open RigGrade</a>
+    </div>
+    <div class="card">
+      <span class="tag">Public records · live</span>
+      <h3>Hojo Research Agent</h3>
+      <p>Sourced research reports from public registries: product recalls, motor carrier safety and insurance records, federal court dockets, licence and exclusion lists, government contract awards, nonprofit filings. Every figure sits under the link and the raw excerpt it came from.</p>
+      <a href="https://github.com/nnyycc77-ship-it/tiny-ledger">See the tools and sample reports</a>
+    </div>
+    <div class="card">
+      <span class="tag">Work postings · new</span>
+      <h3>Verdict Desk</h3>
+      <p>Paste a job, bounty or contest posting before you spend days on it. The desk checks what the posting proves about its funding, payout route and award terms, and returns GO, CAUTION or NO-GO, with each finding quoting the line it rests on.</p>
+      <a href="#contact">Ask for early access</a>
+    </div>
+    <div class="card">
+      <span class="tag">Delivered reports · in development</span>
+      <h3>Citation Checker</h3>
+      <p>Paste a report, from a person or an AI, together with its brief. The checker fetches every cited source and confirms each quoted claim is really there, listing the missing or contradicted ones one by one.</p>
+      <a href="#contact">Ask to be notified</a>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <h2>How a verdict is built</h2>
+  <p class="sub">The same four steps sit under every product. They are what make the result something you can audit rather than something you have to believe.</p>
+  <ol class="how">
+    <li><div><b>Extract the claims</b><span>Every checkable statement in the subject is pulled out and tied to the exact line it came from.</span></div></li>
+    <li><div><b>Fetch the sources</b><span>Deterministic checks read the named sources themselves. The same input always gives the same output; no model decides a verdict.</span></div></li>
+    <li><div><b>Fail closed</b><span>A claim whose source cannot be reached stays unproven. It is never waved through, and a contradicted claim is listed, never averaged away.</span></div></li>
+    <li><div><b>Show the evidence</b><span>The verdict card is short enough to read in seconds; the trail behind it records what was checked, where, when, and with what result.</span></div></li>
+  </ol>
+  <p class="sub" style="margin-top:22px">Two rules of the house: our method is public, and we never hold, manage or move anyone else's money. We sell the check, and the buyer keeps the decision.</p>
+</section>
+
+<section id="agents">
+  <h2>For software agents</h2>
+  <p class="sub">Agents can discover, call and pay for our checks without a human in the loop.</p>
+  <div class="agents">
+    <div class="card">
+      <span class="tag">Discovery</span>
+      <h3>Machine-readable listings</h3>
+      <p>Each service publishes <code>/.well-known/agent.json</code>, an <code>llms.txt</code> and an OpenAPI description.</p>
+    </div>
+    <div class="card">
+      <span class="tag">Tools</span>
+      <h3>MCP servers</h3>
+      <p>RigGrade and the public-records checkers ship as MCP servers, so an agent can run the check as a tool before it commits to a job.</p>
+    </div>
+    <div class="card">
+      <span class="tag">Payment</span>
+      <h3>Pay per call</h3>
+      <p>Paid routes answer <code>402</code> with an x402 challenge and settle in USDC on Base. Payers are screened against the OFAC sanctions list before settlement.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <div class="contact">
+    <p>Entropoid is a small independent operation. For early access, a pilot, or a question about a method, write to:</p>
+    <p><span class="ph">[contact address to be set by the owner]</span></p>
+    <p style="color:var(--muted);font-size:14.5px;margin-top:12px">Code for every product is public and open source, so you can read the method before you trust a result.</p>
+  </div>
+</section>
+
+<footer>
+  <span>© 2026 Entropoid</span>
+  <span><a href="https://github.com/nnyycc77-ship-it">GitHub</a></span>
+</footer>
+</div>
+</body>
+</html>
