@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Notes · Entropoid</title>
+<meta name="description" content="Entropoid's weekly operations note: what was checked, what changed, what failed closed, one sample verdict, and what is shipping next.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,750&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+:root{--paper:#F6F7F9;--sheet:#FFFFFF;--ink:#18202E;--muted:#59627A;--rule:#DADFE8;--accent:#1F4FC4;--accent-soft:#E5ECFB;--node:#EDF0F5;
+--f-display:"Bricolage Grotesque","Avenir Next","Segoe UI",system-ui,sans-serif;--f-body:"IBM Plex Sans","Segoe UI",system-ui,sans-serif;--f-mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--paper:#10141C;--sheet:#171C26;--ink:#E7EAF1;--muted:#9AA3B7;--rule:#2A3242;--accent:#8FABF7;--accent-soft:#1E2A46;--node:#1E2531;color-scheme:dark}}
+:root[data-theme="dark"]{--paper:#10141C;--sheet:#171C26;--ink:#E7EAF1;--muted:#9AA3B7;--rule:#2A3242;--accent:#8FABF7;--accent-soft:#1E2A46;--node:#1E2531;color-scheme:dark}
+*{box-sizing:border-box}html,body{margin:0}
+body{background:var(--paper);color:var(--ink);font:400 16px/1.65 var(--f-body);-webkit-font-smoothing:antialiased;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 56px}
+.wrap{max-width:900px;margin:0 auto}
+nav.top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:18px;border-bottom:1px solid var(--rule);flex-wrap:wrap}
+.brand{font:750 18px/1 var(--f-display);text-decoration:none;color:var(--ink)}
+nav.top ul{display:flex;gap:4px;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+nav.top a.l{font-size:14px;color:var(--muted);text-decoration:none;padding:6px 10px;border-radius:6px}
+nav.top a.l:hover{background:var(--node);color:var(--ink)}
+header{padding-block:48px 28px}
+.kicker{font:500 12px/1 var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+h1{font:750 clamp(32px,5.5vw,48px)/1.05 var(--f-display);margin:12px 0 14px;text-wrap:balance;letter-spacing:-.01em}
+.lede{font-size:18px;color:var(--muted);max-width:62ch;margin:0}
+article{background:var(--sheet);border:1px solid var(--rule);border-radius:10px;padding:22px 24px;max-width:66ch}
+article h2{font:600 20px/1.3 var(--f-body);margin:0 0 4px}
+article time{font:500 12px/1 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+article dl{margin:16px 0 0;display:grid;grid-template-columns:minmax(120px,170px) 1fr;gap:10px 14px}
+article dt{font:500 12px/1.6 var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+article dd{margin:0}
+@media (max-width:520px){article dl{grid-template-columns:1fr}article dt{margin-top:4px}}
+footer{padding-block:32px 0;color:var(--muted);font-size:13.5px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+footer a{color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav class="top" aria-label="Site">
+  <a class="brand" href="/">Entropoid</a>
+  <ul>
+    <li><a class="l" href="/#products">Products</a></li>
+    <li><a class="l" href="/#systems">Systems</a></li>
+    <li><a class="l" href="/proof/">Proof</a></li>
+    <li><a class="l" href="/notes/">Notes</a></li>
+    <li><a class="l" href="/#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<header>
+  <div class="kicker">Weekly operations note</div>
+  <h1>What ran this week, and what refused to.</h1>
+  <p class="lede">One short note a week, in a fixed shape: what was checked, what changed, what failed closed, one sample verdict, and what is shipping next. Figures appear only where a public artifact backs them.</p>
+</header>
+
+<article>
+  <time datetime="2026-11-08">Week ending 8 November 2026</time>
+  <h2>Edition 1</h2>
+  <dl>
+    <dt>Checked</dt><dd>The sanctions change series passed pair 1,266, and the escrow simulation series passed sample 662.</dd>
+    <dt>Changed</dt><dd>The live delivery desk took its eleventh paid job into delivery.</dd>
+    <dt>Failed closed</dt><dd>One public registry source has now refused our reads for over a hundred samples in a row. Every one is recorded as "not checked", never as a pass and never as a clean no-match.</dd>
+    <dt>Sample verdict</dt><dd>To follow with the first published trail.</dd>
+    <dt>Shipping next</dt><dd>The Arbitrum port of Escrow Gate, and the PayPal build of Verdict Desk.</dd>
+  </dl>
+</article>
+
+<footer>
+  <span>© 2026 Entropoid</span>
+  <span><a href="/proof/">Proof library</a> · <a href="https://github.com/nnyycc77-ship-it">GitHub</a></span>
+</footer>
+</div>
+</body>
+</html>

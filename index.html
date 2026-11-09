@@ -75,7 +75,10 @@ footer a{color:var(--muted)}
   <ul>
     <li><a class="l" href="#products">Products</a></li>
     <li><a class="l" href="#how">How we work</a></li>
+    <li><a class="l" href="#systems">Systems</a></li>
     <li><a class="l" href="#agents">For agents</a></li>
+    <li><a class="l" href="/proof/">Proof</a></li>
+    <li><a class="l" href="/notes/">Notes</a></li>
     <li><a class="l" href="#contact">Contact</a></li>
   </ul>
 </nav>
@@ -126,11 +129,42 @@ footer a{color:var(--muted)}
   <p class="sub">The same four steps sit under every product. They are what make the result something you can audit rather than something you have to believe.</p>
   <ol class="how">
     <li><div><b>Extract the claims</b><span>Every checkable statement in the subject is pulled out and tied to the exact line it came from.</span></div></li>
-    <li><div><b>Fetch the sources</b><span>Deterministic checks read the named sources themselves. The same input always gives the same output; no model decides a verdict.</span></div></li>
+    <li><div><b>Fetch the sources</b><span>Deterministic checks read the named sources themselves. Once the claims are extracted, the checking is deterministic: the same evidence always gives the same verdict, and no model decides it.</span></div></li>
     <li><div><b>Fail closed</b><span>A claim whose source cannot be reached stays unproven. It is never waved through, and a contradicted claim is listed, never averaged away.</span></div></li>
     <li><div><b>Show the evidence</b><span>The verdict card is short enough to read in seconds; the trail behind it records what was checked, where, when, and with what result.</span></div></li>
   </ol>
   <p class="sub" style="margin-top:22px">Two rules of the house: our method is public, and we never hold, manage or move anyone else's money. We sell the check, and the buyer keeps the decision.</p>
+</section>
+
+<section id="systems">
+  <h2>Systems we run</h2>
+  <p class="sub">The checks on this page are not a demo. They run on systems we built and operate, and each one can be inspected.</p>
+  <div class="grid">
+    <div class="card">
+      <span class="tag">Demo (recorded)</span>
+      <h3>Verdict Desk</h3>
+      <p>A working desk that takes a job contract and a delivered piece of work, checks the delivery against its sources, and returns a verdict card with the evidence trail behind it. Built for marketplaces and posters who need to know whether agent work was actually done.</p>
+      <a href="#contact">Demo recording: link to follow</a>
+    </div>
+    <div class="card">
+      <span class="tag">Testnet</span>
+      <h3>Escrow Gate for Agent Work</h3>
+      <p>An escrow contract plus a verdict registry. A buyer locks payment, the agent delivers, an evaluator posts a verdict bound to the exact delivery, and the escrow obeys it: pass releases, fail refunds, and an unknown verdict holds the funds for seven days and then refunds. Live on NEAR testnet with a public repository; an Arbitrum port is in build.</p>
+      <a href="https://github.com/nnyycc77-ship-it/trust-toll-near">Repository</a>
+    </div>
+    <div class="card">
+      <span class="tag">First case studies open</span>
+      <h3>MCP and agent security audit</h3>
+      <p>Static scans of agent and MCP servers for tool poisoning and related risks, with a reviewed audit tier and a monthly watch. The first three standard reviewed audits are free as case studies. Static scan 5 USDC; standard reviewed audit 200 USDC per server; watch 15 USDC per month per server.</p>
+      <a href="#contact">Ask for a case study slot</a>
+    </div>
+    <div class="card">
+      <span class="tag">Live</span>
+      <h3>Verification shelf</h3>
+      <p>The same checks, exposed as an API that software agents call directly and pay for per call in USDC on Base. Listings are machine readable, and paid routes settle through x402.</p>
+      <a href="https://verification-shelf.onrender.com">Open the shelf</a>
+    </div>
+  </div>
 </section>
 
 <section id="agents">
