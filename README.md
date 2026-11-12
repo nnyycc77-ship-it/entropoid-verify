@@ -3,8 +3,8 @@
 The public website of Entropoid, served at https://verify.entropoid.com by GitHub Pages.
 
 Entropoid builds verification services where every claim carries its quoted source:
-RigGrade (GPU rig grading), the Hojo Research Agent (research reports from public records),
-Verdict Desk (verdicts on work postings) and a citation checker for delivered reports.
+RigGrade (GPU rig grading), Verdict Desk (verdicts on work postings) and a citation
+checker for delivered reports.
 
 ## Layout
 

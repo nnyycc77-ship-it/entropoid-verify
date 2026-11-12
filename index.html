@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Entropoid</title>
-<meta name="description" content="Entropoid builds verification services where every claim carries its quoted source: GPU rig grading, research reports from public records, and verdicts on work postings and delivered reports.">
+<meta name="description" content="Entropoid builds verification services where every claim carries its quoted source: GPU rig grading, and verdicts on work postings and delivered reports.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,750&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@500&display=swap">
 <style>
-/* Layout: a one-page company front door. Statement, four products, how we work, for agents, contact. */
+/* Layout: a one-page company front door. Statement, three products, how we work, for agents, contact. */
 :root{
   --paper:#F6F7F9; --sheet:#FFFFFF; --ink:#18202E; --muted:#59627A; --rule:#DADFE8;
   --accent:#1F4FC4; --accent-soft:#E5ECFB; --node:#EDF0F5;
@@ -45,6 +45,7 @@ section{padding-block:44px 8px;border-top:1px solid var(--rule);scroll-margin-to
 h2{font:750 clamp(24px,3.6vw,32px)/1.12 var(--f-display);margin:0 0 8px;text-wrap:balance}
 .sub{color:var(--muted);max-width:62ch;margin:0 0 22px}
 .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.grid>.card:last-child:nth-child(odd){grid-column:1/-1}
 @media (max-width:640px){.grid{grid-template-columns:1fr}}
 .card{background:var(--sheet);border:1px solid var(--rule);border-radius:10px;padding:18px 20px;display:flex;flex-direction:column;gap:8px;min-width:0}
 .card .tag{font:500 11px/1 var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
@@ -93,7 +94,7 @@ footer a{color:var(--muted)}
 </header>
 
 <section id="products">
-  <h2>Four products, one method</h2>
+  <h2>Three products, one method</h2>
   <p class="sub">Each one answers a single question and shows its work. People use them through a web page; software agents use them through an API.</p>
   <div class="grid">
     <div class="card">
@@ -101,12 +102,6 @@ footer a{color:var(--muted)}
       <h3>RigGrade</h3>
       <p>An independent health and speed check for rented GPUs. A pinned benchmark runs on the machine, the result is graded against published bars for that class of card, and the certificate is signed so anyone can verify it. Free preflight and host monitor; paid grades.</p>
       <a href="https://riggrade-674098696181.us-central1.run.app/riggrade/v1">Open RigGrade</a>
-    </div>
-    <div class="card">
-      <span class="tag">Public records · live</span>
-      <h3>Hojo Research Agent</h3>
-      <p>Sourced research reports from public registries: product recalls, motor carrier safety and insurance records, federal court dockets, licence and exclusion lists, government contract awards, nonprofit filings. Every figure sits under the link and the raw excerpt it came from.</p>
-      <a href="https://github.com/nnyycc77-ship-it/tiny-ledger">See the tools and sample reports</a>
     </div>
     <div class="card">
       <span class="tag">Work postings · new</span>
